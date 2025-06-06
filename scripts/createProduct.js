@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export function initScene() {
-  const scene = new Scene(); //initialized the scene this where all the observable components fit in
+  const scene = new THREE.Scene //initialized the scene this where all the observable components fit in
   
   scene.background = new Color(0xeeeeee);
 
