@@ -7,8 +7,8 @@ productGroup = createProduct(scene);
 addLighting(scene);
 
 function animate() {
-  productGroup.rotation.y += 0.01
-  camera.lookAt(productGroup.position);
+  productGroup.rotation.y += 0.003
+ 
   requestAnimationFrame(animate);
   controls.update();
   renderer.render(scene, camera);

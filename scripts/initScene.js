@@ -5,9 +5,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 export function initScene() {
   const container = document.querySelector("#canvas_")
   const scene = new THREE.Scene() //initialized the scene this where all the observable components fit in
-  
-  scene.background = new THREE.Color(0xeeeeee); //color hex for wood brown
 
+  scene.background = new THREE.Color('skyblue');
   const camera = new THREE.PerspectiveCamera(
     75,
     container.clientWidth / container.clientHeight,
