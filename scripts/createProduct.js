@@ -1,32 +1,32 @@
-
+// scripts/createProduct.js
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-export function initScene() {
-  const scene = new THREE.Scene //initialized the scene this where all the observable components fit in
-  
-  scene.background = new Color(0xeeeeee);
+export function createProduct(scene) {
+  const group = new THREE.Group();
 
-  const camera = new PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
+  const seat = new THREE.Mesh(
+    new THREE.BoxGeometry(2, 0.2, 2),
+    new THREE.MeshStandardMaterial({ color: 0x8B4513 })
   );
-  camera.position.set(0, 2, 5);
+  seat.position.y = 1;
+  group.add(seat);
 
-  const renderer = new WebGLRenderer({ antialias: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
+  const legMaterial = new THREE.MeshStandardMaterial({ color: 0x654321 });
+  const positions = [
+    [-0.9, 0.5, -0.9],
+    [0.9, 0.5, -0.9],
+    [-0.9, 0.5, 0.9],
+    [0.9, 0.5, 0.9],
+  ];
+  for (const [x, y, z] of positions) {
+    const leg = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.1, 0.1, 1),
+      legMaterial
+    );
+    leg.position.set(x, y, z);
+    group.add(leg);
+  }
 
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
-
-  return { scene, camera, renderer, controls };
+  scene.add(group);
+  return group;
 }
