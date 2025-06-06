@@ -3,10 +3,12 @@
 
 export function createProduct(scene) {
   const group = new THREE.Group();
+  const textureLoader = new THREE.TextureLoader()
+  const texture = textureLoader.load("../texture/texture.jpg");
 
   const seat = new THREE.Mesh(
     new THREE.BoxGeometry(2, 0.2, 2),
-    new THREE.MeshStandardMaterial({ color: 0x8B4513 })
+    new THREE.MeshStandardMaterial({ color: 0x654321, map:texture})
   );
   seat.position.y = 1;
   group.add(seat);
