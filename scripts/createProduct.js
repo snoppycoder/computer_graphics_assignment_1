@@ -1,5 +1,5 @@
-// scripts/createProduct.js
-import * as THREE from 'three';
+// // scripts/createProduct.js
+ import * as THREE from 'three';
 
 export function createProduct(scene) {
   const group = new THREE.Group();
