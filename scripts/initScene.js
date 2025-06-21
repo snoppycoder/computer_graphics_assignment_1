@@ -1,6 +1,8 @@
 
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js';
+
 
 export function initScene() {
   const container = document.querySelector("#canvas_")
@@ -23,6 +25,21 @@ export function initScene() {
   container.append(renderer.domElement)
   controls.enableDamping = true;
   controls.target.set(0, 1, 0)
+  controls.minPolarAngle = 0;
+  controls.maxPolarAngle = Math.PI;
+  controls.minAzimuthAngle = -Infinity;
+  controls.maxAzimuthAngle = Infinity;
+  // this might be necessary to set the controls to allow free movement around the table
+  const rgbeloader = new EXRLoader();
+  rgbeloader.load('../texture/room.exr', function (texture) {
+    texture.mapping = THREE.EquirectangularReflectionMapping;
+    scene.background = texture;
+    scene.environment = texture;
+  });
+ 
+
+
+  controls.update();
 
   //just in case the window resized
 

@@ -8,7 +8,13 @@ export function createProduct(scene) {
 
   const seat = new THREE.Mesh(
     new THREE.BoxGeometry(2, 0.2, 2),
-    new THREE.MeshStandardMaterial({ color: 0x654321, map:texture})
+    new THREE.MeshStandardMaterial({
+  map: texture,
+  roughness: 0.5,
+  metalness: 0.1,
+  color: 0x654321
+})
+
   );
   seat.position.y = 1;
   group.add(seat);
