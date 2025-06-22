@@ -14,7 +14,7 @@ scene.add(axesHelper);
 
 
 function animate() {
-  // productGroup.rotation.y += 0.003
+  productGroup.rotation.y += 0.003
  
   requestAnimationFrame(animate);
   controls.update();
