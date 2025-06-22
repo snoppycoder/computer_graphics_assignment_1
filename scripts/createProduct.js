@@ -3,13 +3,13 @@ export function createProduct(scene) {
   const group = new THREE.Group();
 
   const woodMaterial = new THREE.MeshStandardMaterial({
-    map: new THREE.TextureLoader().load('../texture/texture.jpg'),
+    map: new THREE.TextureLoader().load('/texture/texture.jpg'),
     roughness: 0.6,
     metalness: 0.1,
   });
 
   const metalMaterial = new THREE.MeshStandardMaterial({
-    map: new THREE.TextureLoader().load('../texture/metal_texture.jpg'),
+    map: new THREE.TextureLoader().load('/texture/metal_texture.jpg'),
     roughness: 0.3,
     metalness: 0.8,
   });
