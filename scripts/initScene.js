@@ -1,8 +1,6 @@
 
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/controls/OrbitControls.js';
-;
-import { EXRLoader } from 'https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/loaders/EXRLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js';
 
 
 
@@ -10,12 +8,13 @@ export function initScene() {
   const container = document.querySelector("#canvas_")
   const scene = new THREE.Scene() //initialized the scene this where all the observable components fit in
    const rgbeloader = new EXRLoader();
-  rgbeloader.load('../texture/room.exr', function (texture) {
+  rgbeloader.load('texture/room.exr', function (texture) {
+
     texture.mapping = THREE.EquirectangularReflectionMapping;
     scene.background = texture;
     scene.environment = texture;
   });
-  scene.background = new THREE.Color(0xeeeeee); //set the background color to light grey
+  
  
   const camera = new THREE.PerspectiveCamera(
     75,

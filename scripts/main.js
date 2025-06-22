@@ -1,7 +1,9 @@
 import { initScene } from './initScene.js';
 import { createProduct } from './createProduct.js';
 import { addLighting } from './lighting.js';
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js';
+
+
+
 let scene, camera, renderer, productGroup, controls;
 ({ scene, camera, renderer, controls } = initScene());
 console.log("Main loaded")
