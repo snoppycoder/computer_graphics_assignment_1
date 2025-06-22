@@ -36,6 +36,10 @@ export function initScene() {
   controls.minAzimuthAngle = -Infinity;
   controls.maxAzimuthAngle = Infinity;
   // this might be necessary to set the controls to allow free movement around the table
+  renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap; // nice soft shadows
+
+
  
 
 

@@ -9,6 +9,7 @@ addLighting(scene);
 const axesHelper = new THREE.AxesHelper(2);
 scene.add(axesHelper);
 
+
 function animate() {
   // productGroup.rotation.y += 0.003
  
