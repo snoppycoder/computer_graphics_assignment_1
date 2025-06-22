@@ -4,6 +4,7 @@ import { addLighting } from './lighting.js';
 import * as THREE from 'three';
 let scene, camera, renderer, productGroup, controls;
 ({ scene, camera, renderer, controls } = initScene());
+console.log("Main loaded")
 productGroup = createProduct(scene);
 addLighting(scene);
 const axesHelper = new THREE.AxesHelper(2);
