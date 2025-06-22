@@ -7,8 +7,14 @@ import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js';
 export function initScene() {
   const container = document.querySelector("#canvas_")
   const scene = new THREE.Scene() //initialized the scene this where all the observable components fit in
-
-  scene.background = new THREE.Color('skyblue');
+   const rgbeloader = new EXRLoader();
+  rgbeloader.load('../texture/room.exr', function (texture) {
+    texture.mapping = THREE.EquirectangularReflectionMapping;
+    scene.background = texture;
+    scene.environment = texture;
+  });
+  scene.background = new THREE.Color(0xeeeeee); //set the background color to light grey
+ 
   const camera = new THREE.PerspectiveCamera(
     75,
     container.clientWidth / container.clientHeight,
@@ -30,12 +36,6 @@ export function initScene() {
   controls.minAzimuthAngle = -Infinity;
   controls.maxAzimuthAngle = Infinity;
   // this might be necessary to set the controls to allow free movement around the table
-  const rgbeloader = new EXRLoader();
-  rgbeloader.load('../texture/room.exr', function (texture) {
-    texture.mapping = THREE.EquirectangularReflectionMapping;
-    scene.background = texture;
-    scene.environment = texture;
-  });
  
 
 
