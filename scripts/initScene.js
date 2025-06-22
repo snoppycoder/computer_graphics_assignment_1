@@ -1,5 +1,6 @@
 
-import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js';
+import { EXRLoader } from 'https://cdn.jsdelivr.net/npm/three@0.164.0/examples/jsm/loaders/EXRLoader.js';
+
 
 
 
