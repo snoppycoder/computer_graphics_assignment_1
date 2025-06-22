@@ -1,9 +1,7 @@
 
-import { EXRLoader } from 'https://cdn.jsdelivr.net/npm/three@0.164.0/examples/jsm/loaders/EXRLoader.js';
-
-
-
-
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js';
+import * as THREE from 'three';
 export function initScene() {
   const container = document.querySelector("#canvas_")
   const scene = new THREE.Scene() //initialized the scene this where all the observable components fit in

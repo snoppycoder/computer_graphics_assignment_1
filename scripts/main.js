@@ -1,7 +1,7 @@
 import { initScene } from './initScene.js';
 import { createProduct } from './createProduct.js';
 import { addLighting } from './lighting.js';
-
+import * as THREE from 'three';
 
 
 let scene, camera, renderer, productGroup, controls;
