@@ -1,4 +1,5 @@
-import * as THREE from 'three';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js';
+
 
 export function createProduct(scene) {
   const group = new THREE.Group();

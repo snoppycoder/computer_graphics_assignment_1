@@ -1,5 +1,6 @@
 // scripts/lighting.js
-import * as THREE from 'three';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js';
+
 
 export function addLighting(scene) {
   const ambient = new THREE.AmbientLight(0xffffff, 0.5);

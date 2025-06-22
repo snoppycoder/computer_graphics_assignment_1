@@ -1,7 +1,9 @@
 
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/controls/OrbitControls.js';
+;
+import { EXRLoader } from 'https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/loaders/EXRLoader.js';
+
 
 
 export function initScene() {
